@@ -1,0 +1,181 @@
+Variables
+- asistenciaEspecial: Real
+- serviciosAdicionales: boolean
+- totalPagar: Real
+- costoBoletos: Real
+- costoComida: Real
+- cantAsistetenciaEspecialCliente: entero
+- cantComidaCliente: entero
+- tRuta: boolean
+- numeroBoletos: entero
+- cantDescuento: entero
+- totalBoletosVendidos: entero
+- totalServiciosAdicionales: entero
+- ingresosPrimeraClase: Real
+- ingresosSegundaClase: Real
+- ingresosTerceraClase: Real
+- ingresosNacional: Real
+- ingresosInternacional: Real
+- PorlamarCaracas: Real
+- CaracasPorlamar: Real
+- PuertoOrdazCaraca: Real
+- CaracasPuertoOrdaz: Real
+- MaracaiboCaracas: Real
+- CaracasMaracaibo: Real
+- ElVigiaPorlamar: Real
+- PorlamarElVigia: Real
+- BarcelonaCaracas: Real
+- CaracasBarcelona: Real
+- LaFriaCaracas: Real
+- CaracasLaFria: Real
+- BogotaCaracas: Real
+- CaracasBogota: Real
+- CurazaoCaracas: Real
+- CaracasCurazao: Real
+- SantoDomingoCaracas: Real
+- CaracasSantoDomingo: Real
+- LaRomanaCaracas: Real
+- CaracasLaRomana: Real
+- nombrePasajero: cadena
+- cedula: cadena
+- edad: entero
+- claseBoleto: entero
+- tipoBoleto: caracter
+- rutaViaje: entero
+- requiereServiciosAdicionales: cadena
+- opcionServiciosAdicionales: cadena
+- nacionalidad: cadena
+- nacionalidadOpcion: entero
+- utilCantTipoBoleto: entero
+- isTrue: boolean
+- opc: cadena
+- ingresosClase: Real
+- regresoBoleto: entero
+- opc2: cadena
+- num: entero
+- errorCode: entero
+- isString: boolean
+- i: entero
+- opcion: entero
+- input: cadena
+- factura: entero
+- totalingresosBoleto: Real
+- totalingresosTipo: Real
+- nombreCliente: cadena
+- cedulaCliente: cadena
+- edadCliente: entero
+
+Inicio
+  asistenciaEspecial = 100.0
+  factura = 0
+  totalBoletosVendidos = 0
+  totalServiciosAdicionales = 0
+  ingresosPrimeraClase = 0.0
+  ingresosSegundaClase = 0.0
+  ingresosTerceraClase = 0.0
+  PorlamarCaracas = 0.0
+  CaracasPorlamar = 0.0
+  PuertoOrdazCaraca = 0.0
+  CaracasPuertoOrdaz = 0.0
+  MaracaiboCaracas = 0.0
+  CaracasMaracaibo = 0.0
+  ElVigiaPorlamar = 0.0
+  PorlamarElVigia = 0.0
+  BarcelonaCaracas = 0.0
+  CaracasBarcelona = 0.0
+  LaFriaCaracas = 0.0
+  CaracasLaFria = 0.0
+  BogotaCaracas = 0.0
+  CaracasBogota = 0.0
+  CurazaoCaracas = 0.0
+  CaracasCurazao = 0.0
+  SantoDomingoCaracas = 0.0
+  CaracasSantoDomingo = 0.0
+  LaRomanaCaracas = 0.0
+  CaracasLaRomana = 0.0
+  
+  repetir
+    borrarPantalla()
+    escribir('*')
+    escribir('* --- LASER Airlines --- *')
+    escribir('* --- Sistema de Venta de Boletos --- *')
+    escribir('*')
+    repetir 
+      escribir
+      escribir(' 1. Comprar Boleto')
+      escribir(' 2. Ver Sistema')
+      escribir(' 3. Salir')
+      escribir
+      escribir('Ingrese su opción: ')
+      leer(input)
+      convertirACadena(input, num, errorCode)
+      si errorCode != 0 entonces
+        isString = verdadero
+      sino
+        isString = falso
+      fin si
+      si isString = falso entonces
+        opcion = convertirAEntero(input)
+      sino
+        borrarPantalla()
+        escribir('*')
+        escribir('* --- LASER Airlines --- *')
+        escribir('* --- Sistema de Venta de Boletos --- *')
+        escribir('*')
+        escribir
+        escribir('Ingrese un valor valido')
+      fin si
+      escribir
+    hasta isString = falso
+    borrarPantalla()
+    seleccionar opcion hacer
+      caso 1:
+        factura = factura + 1
+        escribir('*')
+        escribir('* --- LASER Airlines --- *')
+        escribir('* --- Sistema de Venta de Boletos --- *')
+        escribir('*')
+        numeroBoletos = 0
+        serviciosAdicionales = falso
+        totalPagar = 0.0
+        costoComida = 0.0
+        cantAsistetenciaEspecialCliente = 0
+        cantComidaCliente = 0
+        cantDescuento = 0
+        tRuta = falso
+        escribir
+        escribir('--- DATOS DE LA FACTURA ---')
+        escribir
+        escribir('Ingrese edad del cliente: ')
+        leer(input)
+        convertirACadena(input, num, errorCode)
+        si errorCode != 0 entonces
+          isString = verdadero
+        sino
+          isString = falso
+        fin si
+        si isString = falso entonces
+          edadCliente = convertirAEntero(input)
+          repetir
+            escribir('Nombre del cliente: ')
+            leer(input)
+            convertirACadena(input, num, errorCode)
+            si errorCode != 0 entonces
+              isString = verdadero
+            sino
+              isString = falso
+            fin si
+            si isString = verdadero entonces
+              // No se hace nada
+            fin si
+          hasta isString = falso
+        sino
+          // No se hace nada
+        fin si
+      fin caso
+      caso 2:
+        // Ver sistema
+      fin caso
+    fin seleccionar
+  hasta opcion = 3
+Fin.
