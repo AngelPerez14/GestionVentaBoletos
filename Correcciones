@@ -1,0 +1,21 @@
+- No existe validación en los nombres
+- Recomendación, cuando vayan a declarar variables, procuren que las del mismo tipo queden en una misma línea, no por separado, eso le ahorra lineas de código.
+- Con respecto al pseudocodigo, no es manera de declarar variables en el mismo, ademas faltan "Fin si / Fin sino"
+
+Variables
+- asistenciaEspecial: Real
+- serviciosAdicionales: boolean
+- totalPagar: Real
+- costoBoletos: Real
+- costoComida: Real
+- cantAsistetenciaEspecialCliente: entero
+- cantComidaCliente: entero
+- tRuta: boolean
+- numeroBoletos: entero
+- cantDescuento: entero
+- totalBoletosVendidos: entero
+- totalServiciosAdicionales: entero
+- ingresosPrimeraClase: Real
+- ingresosSegundaClase: Real
+- ingresosTerceraClase: Real
+- ingresosNacional: Real
